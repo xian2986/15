@@ -1,8 +1,9 @@
+#define s 11
 #define a 10
 #define b 9
 #define c 8
 void setup() {
-  pinMode(11, OUTPUT);
+  pinMode(s, OUTPUT);
   pinMode(a, INPUT);
   pinMode(b, INPUT);
   pinMode(c, INPUT);
@@ -13,14 +14,14 @@ void loop() {
   if (
     ((digitalRead(a) == HIGH) && (digitalRead(b) == HIGH) && (digitalRead(c) == HIGH)) ||
     ((digitalRead(a) == HIGH) && (digitalRead(b) == HIGH) && (digitalRead(c) == LOW)) || 
-    ((digitalRead(a) == LOW)  &&  (digitalRead(b) == HIGH) && (digitalRead(c) == LOW)) 
+    ((digitalRead(a) == LOW)  &&  (digitalRead(b) == HIGH) && (digitalRead(c) == LOW)) ||
     )
   {
-    digitalWrite(11, HIGH);
+    digitalWrite(s, HIGH);
  }
   else 
   {
-    digitalWrite(11, LOW);
+    digitalWrite(s, LOW);
   }
   delay(100);
 }
