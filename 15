@@ -1,0 +1,26 @@
+#define a 10
+#define b 9
+#define c 8
+void setup() {
+  pinMode(11, OUTPUT);
+  pinMode(a, INPUT);
+  pinMode(b, INPUT);
+  pinMode(c, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (
+    ((digitalRead(a) == HIGH) && (digitalRead(b) == HIGH) && (digitalRead(c) == HIGH)) ||
+    ((digitalRead(a) == HIGH) && (digitalRead(b) == HIGH) && (digitalRead(c) == LOW)) || 
+    ((digitalRead(a) == LOW)  &&  (digitalRead(b) == HIGH) && (digitalRead(c) == LOW)) 
+    )
+  {
+    digitalWrite(11, HIGH);
+ }
+  else 
+  {
+    digitalWrite(11, LOW);
+  }
+  delay(100);
+}
